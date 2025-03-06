@@ -3,7 +3,7 @@
 
 ## Overview
 
-DeblurGAN-v2 is a new end-to-end generative adversarial network (GAN) designed for motion deblurring in single images. It improves efficiency, quality, and flexibility compared to previous methods. The model is built on a relativistic conditional GAN with a dual-scale discriminator.
+DeblurGAN-v2 is a end-to-end generative adversarial network (GAN) designed for motion deblurring in single images. It improves efficiency, quality, and flexibility compared to previous methods. The model is built on a relativistic conditional GAN with a dual-scale discriminator.
 
 With powerful backbones like Inception-ResNet-v2, DeblurGAN-v2 achieves high-quality deblurring, while lightweight options like MobileNet allow processing speeds up to 100 times faster than competitors, enabling real-time video deblurring.
 
