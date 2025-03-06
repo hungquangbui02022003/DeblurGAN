@@ -14,8 +14,8 @@ jointly by noise, blur, compression, etc. The picture below shows the visual qua
 Inception-ResNet-v2 backbone over DeblurGAN. It is drawn from our new synthesized Restore Dataset 
 (refer to Datasets subsection below).-->
 
-![](./doc_images/kohler_visual.png)
-![](./doc_images/restore_visual.png)
+![](./doc_images/kohler_visual(img).png)
+![](./doc_images/restore_visual(img).png)
 
 # Performance and efficiency comparison on the GoPro test dataset  
 _All models were tested on the **linear** image subset._
