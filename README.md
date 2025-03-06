@@ -1,24 +1,13 @@
-# DeblurGAN-v2: Deblurring (Orders-of-Magnitude) Faster and Better
+# DeblurGAN-v2 (Customize): Deblurring (Orders-of-Magnitude) Faster and Better
 
-Code for this paper [DeblurGAN-v2: Deblurring (Orders-of-Magnitude) Faster and Better](https://arxiv.org/abs/1908.03826)
-
-Orest Kupyn, Tetiana Martyniuk, Junru Wu, Zhangyang Wang
-
-In ICCV 2019
 
 ## Overview
 
-We present a new end-to-end generative adversarial network (GAN) for single image motion deblurring, named 
-DeblurGAN-v2, which considerably boosts state-of-the-art deblurring efficiency, quality, and flexibility. DeblurGAN-v2 
-is based on a relativistic conditional GAN with a double-scale discriminator. For the first time, we introduce the 
-Feature Pyramid Network into deblurring, as a core building block in the generator of DeblurGAN-v2. It can flexibly 
-work with a wide range of backbones, to navigate the balance between performance and efficiency. The plug-in of 
-sophisticated backbones (e.g., Inception-ResNet-v2) can lead to solid state-of-the-art deblurring. Meanwhile, 
-with light-weight backbones (e.g., MobileNet and its variants), DeblurGAN-v2 reaches 10-100 times faster than 
-the nearest competitors, while maintaining close to state-of-the-art results, implying the option of real-time 
-video deblurring. We demonstrate that DeblurGAN-v2 obtains very competitive performance on several popular 
-benchmarks, in terms of deblurring quality (both objective and subjective), as well as efficiency. Besides, 
-we show the architecture to be effective for general image restoration tasks too.
+DeblurGAN-v2 is a new end-to-end generative adversarial network (GAN) designed for motion deblurring in single images. It improves efficiency, quality, and flexibility compared to previous methods. The model is built on a relativistic conditional GAN with a dual-scale discriminator.
+
+With powerful backbones like Inception-ResNet-v2, DeblurGAN-v2 achieves high-quality deblurring, while lightweight options like MobileNet allow processing speeds up to 100 times faster than competitors, enabling real-time video deblurring.
+
+Experiments show that DeblurGAN-v2 performs well on multiple benchmarks, achieving strong results in both objective and subjective deblurring quality while maintaining high efficiency. Additionally, the architecture proves effective for general image restoration tasks.
 
 <!---We also study the effect of DeblurGAN-v2 on the task of general image restoration - enhancement of images degraded 
 jointly by noise, blur, compression, etc. The picture below shows the visual quality superiority of DeblurGAN-v2 with 
@@ -27,8 +16,25 @@ Inception-ResNet-v2 backbone over DeblurGAN. It is drawn from our new synthesize
 
 ![](./doc_images/kohler_visual.png)
 ![](./doc_images/restore_visual.png)
-![](./doc_images/gopro_table.png)
-![](./doc_images/lai_table.png)
+
+# Performance and efficiency comparison on the GoPro test dataset  
+_All models were tested on the **linear** image subset._
+
+| Model                | PSNR  | SSIM  | Time   | FLOPS      |
+|----------------------|-------|-------|--------|------------|
+| DeepDeblur          | 29.23 | 0.916 | 4.33s  | 1760.04G   |
+| SRN                 | **30.10** | **0.932** | 1.6s   | 1434.82G   |
+| DeblurGAN           | 28.70 | 0.927 | 0.85s  | 678.29G    |
+| Inception-ResNet-v2 | 29.55 | **0.934** | 0.35s  | 411.34G    |
+| MobileNet           | 28.17 | 0.925 | 0.06s  | 43.75G     |
+| MobileNet-DSC       | 28.03 | 0.922 | **0.04s**  | **14.83G**  |
+
+# Average subjective scores of deblurring results on the Lai dataset  
+
+| Model                                      | DeepDeblur [33] | SRN [45] | DeblurGAN [21] | DeblurGAN-v2 (Inception-ResNet-v2) | DeblurGAN-v2 (MobileNet) | DeblurGAN-v2 (MobileNet-DSC) |
+|--------------------------------------------|-----------------|----------|---------------|----------------------------------|--------------------------|------------------------------|
+| **Score**                                  | 1.08            | 1.68     | 1.29          | **1.74**                         | 1.44                     | 1.32                         |
+
 <!---![](./doc_images/dvd_table.png)-->
 <!---![](./doc_images/kohler_table.png)-->
 
@@ -108,25 +114,3 @@ By default, the name of the pretrained model used by Predictor is 'best_fpn.h5'.
         <td><a href=""></a></td>
     </tr>
 </table>
-
-## Parent Repository
-
-The code was taken from <a href="">https://github.com/KupynOrest/RestoreGAN</a> . This repository contains flexible pipelines for different Image Restoration tasks.
-
-## Citation
-
-If you use this code for your research, please cite our paper.
-
-```
-​```
-@InProceedings{Kupyn_2019_ICCV,
-author = {Orest Kupyn and Tetiana Martyniuk and Junru Wu and Zhangyang Wang},
-title = {DeblurGAN-v2: Deblurring (Orders-of-Magnitude) Faster and Better},
-booktitle = {The IEEE International Conference on Computer Vision (ICCV)},
-month = {Oct},
-year = {2019}
-}
-​```
-```
-
-"# DeblurGAN" 
